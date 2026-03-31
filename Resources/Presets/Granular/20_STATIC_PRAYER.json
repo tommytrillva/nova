@@ -1,0 +1,64 @@
+{
+  "name": "STATIC PRAYER",
+  "category": "Granular",
+  "tags": ["noise", "whisper", "prayer", "dark", "reverb"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "sine",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.1,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 2,
+    "detuneAmount": 0.1,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 21,
+    "position": 0.5,
+    "positionRand": 0.3,
+    "size": 150.0,
+    "density": 8.0,
+    "pitch": 0,
+    "pitchRand": 4,
+    "shape": "hann",
+    "panSpread": 0.5,
+    "level": 0.6
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 1.3, "mix": 0.1 },
+  "filter": { "type": "lp12", "cutoff": 4000.0, "resonance": 0.25, "envAmount": 0.1, "keyTrack": 0.0, "drive": 1.0 },
+  "ampEnv": { "attack": 0.3, "decay": 1.0, "sustain": 0.7, "release": 1.8 },
+  "filterEnv": { "attack": 0.2, "decay": 0.6, "sustain": 0.5, "release": 0.8 },
+  "lfo1": { "rate": 0.2, "shape": "sine", "tempoSync": false, "amount": 0.2, "target": "granPosition" },
+  "lfo2": { "rate": 0.15, "shape": "triangle", "tempoSync": false, "amount": 0.1, "target": "granPitch" },
+  "fx": {
+    "chorus": { "rate": 0.4, "depth": 0.3, "mix": 0.15 },
+    "delay": { "time": 600.0, "feedback": 0.4, "mix": 0.2, "sync": false, "filter": 4000.0 },
+    "reverb": { "size": 0.92, "damping": 0.3, "mix": 0.8 }
+  },
+  "macros": [
+    { "name": "PRAYER", "mappings": [{ "target": "reverbMix", "amount": 0.2 }, { "target": "reverbSize", "amount": 0.08 }] },
+    { "name": "STATIC", "mappings": [{ "target": "granDensity", "amount": 0.6 }, { "target": "distMix", "amount": 0.4 }] },
+    { "name": "WHISPER", "mappings": [{ "target": "oscALevel", "amount": 0.3 }, { "target": "filterCutoff", "amount": 0.4 }] },
+    { "name": "VOID", "mappings": [{ "target": "delayMix", "amount": 0.5 }, { "target": "delayFeedback", "amount": 0.3 }] }
+  ]
+}

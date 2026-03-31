@@ -1,0 +1,64 @@
+{
+  "name": "ANALOG DREAM",
+  "category": "Pads",
+  "tags": ["analog", "warm", "sub", "classic"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.8,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 4,
+    "detuneAmount": 0.3,
+    "unisonSpread": 0.7,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.5,
+    "coarseTune": 0,
+    "fineTune": 0.1,
+    "unison": 4,
+    "detuneAmount": 0.25,
+    "unisonSpread": 0.6,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.3,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.3 },
+  "distortion": { "mode": "softclip", "drive": 2.0, "mix": 0.3 },
+  "filter": { "type": "lp12", "cutoff": 4500.0, "resonance": 0.15, "envAmount": 0.2, "keyTrack": 0.4, "drive": 1.2 },
+  "ampEnv": { "attack": 0.6, "decay": 1.5, "sustain": 0.8, "release": 2.5 },
+  "filterEnv": { "attack": 0.4, "decay": 0.8, "sustain": 0.5, "release": 1.0 },
+  "lfo1": { "rate": 0.3, "shape": "sine", "tempoSync": false, "amount": 0.08, "target": "filterCutoff" },
+  "lfo2": { "rate": 0.15, "shape": "sine", "tempoSync": false, "amount": 0.04, "target": "oscADetune" },
+  "fx": {
+    "chorus": { "rate": 0.7, "depth": 0.3, "mix": 0.2 },
+    "delay": { "time": 375.0, "feedback": 0.25, "mix": 0.08, "sync": true, "filter": 5000.0 },
+    "reverb": { "size": 0.5, "damping": 0.55, "mix": 0.35 }
+  },
+  "macros": [
+    { "name": "WARMTH", "mappings": [{ "target": "distDrive", "amount": 0.4 }, { "target": "distMix", "amount": 0.3 }] },
+    { "name": "BRIGHTNESS", "mappings": [{ "target": "filterCutoff", "amount": 0.6 }] },
+    { "name": "WIDTH", "mappings": [{ "target": "oscADetune", "amount": 0.5 }, { "target": "oscBDetune", "amount": 0.4 }] },
+    { "name": "DEPTH", "mappings": [{ "target": "subLevel", "amount": 0.4 }, { "target": "reverbMix", "amount": 0.3 }] }
+  ]
+}

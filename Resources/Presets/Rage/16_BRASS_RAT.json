@@ -1,0 +1,64 @@
+{
+  "name": "BRASS RAT",
+  "category": "Rage",
+  "tags": ["brass", "gritty", "square", "poly"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "square",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.8,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 2,
+    "detuneAmount": 0.06,
+    "unisonSpread": 0.4,
+    "pulseWidth": 0.45
+  },
+  "oscB": {
+    "waveform": "square",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.55,
+    "coarseTune": -12,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.0,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.15 },
+  "distortion": { "mode": "softclip", "drive": 5.0, "mix": 0.45 },
+  "filter": { "type": "bp", "cutoff": 2500.0, "resonance": 0.4, "envAmount": 0.5, "keyTrack": 0.7, "drive": 1.5 },
+  "ampEnv": { "attack": 0.008, "decay": 0.35, "sustain": 0.6, "release": 0.15 },
+  "filterEnv": { "attack": 0.005, "decay": 0.25, "sustain": 0.4, "release": 0.15 },
+  "lfo1": { "rate": 5.5, "shape": "sine", "tempoSync": false, "amount": 0.06, "target": "filterCutoff" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.9, "depth": 0.3, "mix": 0.1 },
+    "delay": { "time": 250.0, "feedback": 0.25, "mix": 0.08, "sync": true, "filter": 6000.0 },
+    "reverb": { "size": 0.4, "damping": 0.5, "mix": 0.12 }
+  },
+  "macros": [
+    { "name": "GRIT", "mappings": [ { "target": "distDrive", "amount": 0.7 }, { "target": "distMix", "amount": 0.5 }, { "target": "filterCutoff", "amount": 0.3 } ] },
+    { "name": "BRASS", "mappings": [ { "target": "filterCutoff", "amount": 0.5 }, { "target": "filterEnvAmt", "amount": 0.6 }, { "target": "filterRes", "amount": 0.3 } ] },
+    { "name": "BODY", "mappings": [ { "target": "oscBLevel", "amount": 0.5 }, { "target": "subLevel", "amount": 0.4 }, { "target": "filterCutoff", "amount": -0.3 } ] },
+    { "name": "SPACE", "mappings": [ { "target": "reverbMix", "amount": 0.5 }, { "target": "chorusMix", "amount": 0.3 }, { "target": "delayMix", "amount": 0.3 } ] }
+  ]
+}

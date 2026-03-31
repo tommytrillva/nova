@@ -1,0 +1,64 @@
+{
+  "name": "TRAP METAL",
+  "category": "Rage",
+  "tags": ["trap", "metal", "bitcrush", "lead"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "mono",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.9,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 2,
+    "detuneAmount": 0.1,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "square",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.4,
+    "coarseTune": 7,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.45
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.0,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "bitcrush", "drive": 6.0, "mix": 0.65 },
+  "filter": { "type": "hp12", "cutoff": 250.0, "resonance": 0.25, "envAmount": 0.3, "keyTrack": 0.5, "drive": 1.5 },
+  "ampEnv": { "attack": 0.001, "decay": 0.15, "sustain": 0.8, "release": 0.08 },
+  "filterEnv": { "attack": 0.001, "decay": 0.1, "sustain": 0.6, "release": 0.1 },
+  "lfo1": { "rate": 6.0, "shape": "square", "tempoSync": false, "amount": 0.1, "target": "filterCutoff" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 187.5, "feedback": 0.35, "mix": 0.12, "sync": true, "filter": 5000.0 },
+    "reverb": { "size": 0.25, "damping": 0.7, "mix": 0.08 }
+  },
+  "macros": [
+    { "name": "CRUSH", "mappings": [ { "target": "distDrive", "amount": 0.8 }, { "target": "distMix", "amount": 0.6 } ] },
+    { "name": "GRIT", "mappings": [ { "target": "filterCutoff", "amount": 0.5 }, { "target": "filterRes", "amount": 0.4 }, { "target": "oscBLevel", "amount": 0.3 } ] },
+    { "name": "ATTACK", "mappings": [ { "target": "ampA", "amount": -0.3 }, { "target": "ampD", "amount": 0.4 }, { "target": "filterEnvAmt", "amount": 0.5 } ] },
+    { "name": "SPACE", "mappings": [ { "target": "delayMix", "amount": 0.5 }, { "target": "delayFeedback", "amount": 0.4 }, { "target": "reverbMix", "amount": 0.3 } ] }
+  ]
+}

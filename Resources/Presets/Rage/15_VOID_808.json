@@ -1,0 +1,64 @@
+{
+  "name": "VOID 808",
+  "category": "Rage",
+  "tags": ["808", "sub", "void", "rectify"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "mono",
+  "glideTime": 0.08,
+  "oscA": {
+    "waveform": "sine",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.9,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "triangle",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.3,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.0,
+    "level": 0.0
+  },
+  "sub": { "shape": "triangle", "octave": -1, "level": 0.6 },
+  "distortion": { "mode": "rectify", "drive": 2.5, "mix": 0.2 },
+  "filter": { "type": "lp12", "cutoff": 500.0, "resonance": 0.15, "envAmount": 0.35, "keyTrack": 1.0, "drive": 1.0 },
+  "ampEnv": { "attack": 0.003, "decay": 1.0, "sustain": 0.6, "release": 0.6 },
+  "filterEnv": { "attack": 0.001, "decay": 0.4, "sustain": 0.15, "release": 0.3 },
+  "lfo1": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "filterCutoff" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 375.0, "feedback": 0.4, "mix": 0.0, "sync": true, "filter": 8000.0 },
+    "reverb": { "size": 0.4, "damping": 0.6, "mix": 0.05 }
+  },
+  "macros": [
+    { "name": "VOID", "mappings": [ { "target": "filterCutoff", "amount": -0.4 }, { "target": "reverbMix", "amount": 0.4 }, { "target": "reverbSize", "amount": 0.5 } ] },
+    { "name": "WEIGHT", "mappings": [ { "target": "subLevel", "amount": 0.7 }, { "target": "oscBLevel", "amount": 0.4 }, { "target": "filterCutoff", "amount": -0.2 } ] },
+    { "name": "GRIT", "mappings": [ { "target": "distDrive", "amount": 0.6 }, { "target": "distMix", "amount": 0.5 }, { "target": "filterCutoff", "amount": 0.3 } ] },
+    { "name": "TAIL", "mappings": [ { "target": "ampD", "amount": 0.6 }, { "target": "ampR", "amount": 0.5 }, { "target": "ampS", "amount": 0.4 } ] }
+  ]
+}
