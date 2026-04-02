@@ -1,0 +1,39 @@
+name: Build Windows VST3
+
+on:
+  push:
+    branches: [ 'claude/voidsynth-vst3-synth-40btn' ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate audio resources
+        run: python scripts/generate_audio_resources.py --output-dir Resources
+
+      - name: Configure CMake
+        run: cmake -B build -G "Visual Studio 17 2022" -A x64
+
+      - name: Build Release
+        run: cmake --build build --config Release --target VoidSynth_VST3 VoidSynth_Standalone
+
+      - name: Prepare artifacts
+        run: |
+          mkdir dist
+          xcopy /E /I build\VoidSynth_artefacts\Release\VST3\VOIDSYNTH.vst3 dist\VOIDSYNTH.vst3\
+          copy build\VoidSynth_artefacts\Release\Standalone\VOIDSYNTH.exe dist\
+
+      - name: Upload VST3
+        uses: actions/upload-artifact@v4
+        with:
+          name: VOIDSYNTH-Windows-VST3
+          path: dist/
+          retention-days: 90
