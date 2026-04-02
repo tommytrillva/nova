@@ -27,6 +27,7 @@ jobs:
 
       - name: Prepare artifacts
         run: |
+          if exist dist rmdir /s /q dist
           mkdir dist
           xcopy /E /I build\VoidSynth_artefacts\Release\VST3\VOIDSYNTH.vst3 dist\VOIDSYNTH.vst3\
           copy build\VoidSynth_artefacts\Release\Standalone\VOIDSYNTH.exe dist\
