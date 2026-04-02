@@ -27,10 +27,10 @@ jobs:
 
       - name: Prepare artifacts
         run: |
-          if exist dist rmdir /s /q dist
-          mkdir dist
-          xcopy /E /I build\VoidSynth_artefacts\Release\VST3\VOIDSYNTH.vst3 dist\VOIDSYNTH.vst3\
-          copy build\VoidSynth_artefacts\Release\Standalone\VOIDSYNTH.exe dist\
+          if (Test-Path "dist") { Remove-Item "dist" -Recurse -Force }
+          New-Item -ItemType Directory -Name "dist" -Force
+          Copy-Item "build\VoidSynth_artefacts\Release\VST3\VOIDSYNTH.vst3" -Destination "dist\" -Recurse -Force
+          Copy-Item "build\VoidSynth_artefacts\Release\Standalone\VOIDSYNTH.exe" -Destination "dist\" -Force
 
       - name: Upload VST3
         uses: actions/upload-artifact@v4
