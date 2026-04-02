@@ -1,0 +1,24 @@
+{
+  "Type": "Module",
+  "Name": "VOIDSYNTH",
+  "Version": "1.0.0",
+  "Description": "VOIDSYNTH Hybrid Synthesizer",
+  "Vendor": "TommyTrillAI",
+  "URL": "",
+  "E-Mail": "",
+  "SDKVersion": "VST 3.7.12",
+  "Classes": [
+    {
+      "CID": "00000000000000000000000000000000",
+      "Category": "Audio Module Class",
+      "Name": "VOIDSYNTH",
+      "Vendor": "TommyTrillAI",
+      "Version": "1.0.0",
+      "SDKVersion": "VST 3.7.12",
+      "Sub Categories": ["Instrument|Synth"],
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": []
+    }
+  ]
+}
