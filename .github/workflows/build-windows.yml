@@ -23,18 +23,19 @@ jobs:
         run: cmake -B build -G "Visual Studio 17 2022" -A x64
 
       - name: Build Release
-        run: cmake --build build --config Release --target VoidSynth_VST3 VoidSynth_Standalone
+        run: cmake --build build --config Release
 
-      - name: Prepare artifacts
+      - name: Find and upload VST3
         run: |
-          if (Test-Path "dist") { Remove-Item "dist" -Recurse -Force }
-          New-Item -ItemType Directory -Name "dist" -Force
-          Copy-Item "build\VoidSynth_artefacts\Release\VST3\VOIDSYNTH.vst3" -Destination "dist\" -Recurse -Force
-          Copy-Item "build\VoidSynth_artefacts\Release\Standalone\VOIDSYNTH.exe" -Destination "dist\" -Force
+          Get-ChildItem -Path "build" -Filter "*.vst3" -Recurse | ForEach-Object {
+            Write-Host "Found: $($_.FullName)"
+          }
 
       - name: Upload VST3
         uses: actions/upload-artifact@v4
         with:
           name: VOIDSYNTH-Windows-VST3
-          path: dist/
+          path: |
+            build/**/*.vst3
+            build/**/*.exe
           retention-days: 90
