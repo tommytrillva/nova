@@ -24,4 +24,9 @@ public:
                            bool isTicked, bool hasSubMenu,
                            const juce::String& text, const juce::String& shortcutKeyText,
                            const juce::Drawable* icon, const juce::Colour* textColour) override;
+
+    void drawLabel(juce::Graphics& g, juce::Label& label) override;
+
+    // Category accent color (set by editor based on current preset)
+    juce::Colour categoryAccent { 0xffe94560 };
 };

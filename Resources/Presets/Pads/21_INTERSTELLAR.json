@@ -1,0 +1,64 @@
+{
+  "name": "INTERSTELLAR",
+  "category": "Pads",
+  "tags": ["cinematic", "huge", "wavetable", "epic"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "wavetable",
+    "wavetableIndex": 19,
+    "wavetablePosition": 0.35,
+    "level": 0.8,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 8,
+    "detuneAmount": 0.35,
+    "unisonSpread": 0.9,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "wavetable",
+    "wavetableIndex": 19,
+    "wavetablePosition": 0.7,
+    "level": 0.4,
+    "coarseTune": 12,
+    "fineTune": 0.08,
+    "unison": 4,
+    "detuneAmount": 0.2,
+    "unisonSpread": 0.7,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.3,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.15 },
+  "distortion": { "mode": "softclip", "drive": 1.0, "mix": 0.0 },
+  "filter": { "type": "lp12", "cutoff": 12000.0, "resonance": 0.05, "envAmount": 0.15, "keyTrack": 0.3, "drive": 1.0 },
+  "ampEnv": { "attack": 2.5, "decay": 2.0, "sustain": 0.85, "release": 3.5 },
+  "filterEnv": { "attack": 1.5, "decay": 1.0, "sustain": 0.6, "release": 2.0 },
+  "lfo1": { "rate": 0.08, "shape": "sine", "tempoSync": false, "amount": 0.15, "target": "filterCutoff" },
+  "lfo2": { "rate": 0.05, "shape": "triangle", "tempoSync": false, "amount": 0.25, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.6, "depth": 0.5, "mix": 0.35 },
+    "delay": { "time": 500.0, "feedback": 0.35, "mix": 0.15, "sync": true, "filter": 6000.0 },
+    "reverb": { "size": 0.85, "damping": 0.3, "mix": 0.7 }
+  },
+  "macros": [
+    { "name": "VASTNESS", "mappings": [{ "target": "reverbSize", "amount": 0.3 }, { "target": "reverbMix", "amount": 0.4 }, { "target": "oscADetune", "amount": 0.3 }] },
+    { "name": "DRIFT", "mappings": [{ "target": "lfo2Amount", "amount": 0.5 }, { "target": "lfo1Amount", "amount": 0.3 }] },
+    { "name": "BRIGHTNESS", "mappings": [{ "target": "filterCutoff", "amount": 0.6 }, { "target": "filterEnvAmt", "amount": 0.3 }] },
+    { "name": "WIDTH", "mappings": [{ "target": "oscADetune", "amount": 0.4 }, { "target": "oscBDetune", "amount": 0.3 }, { "target": "chorusMix", "amount": 0.3 }] }
+  ]
+}

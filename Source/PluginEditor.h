@@ -18,20 +18,25 @@ private:
     VoidSynthAudioProcessor& processor;
     VoidSynthLookAndFeel lookAndFeel;
 
+    // Current category color
+    juce::Colour categoryColour { 0xffe94560 };
+
     // Preset navigation
     juce::TextButton prevPresetBtn{"<"};
     juce::TextButton nextPresetBtn{">"};
-    juce::TextButton menuBtn{"MENU"};
+    juce::TextButton menuBtn{"BROWSE"};
     juce::Label presetNameLabel;
+    juce::Label categoryLabel;
 
-    // Macro knobs
+    // Macro knobs (hero elements)
     juce::Slider macro1Knob, macro2Knob, macro3Knob, macro4Knob;
     juce::Label macro1Label, macro2Label, macro3Label, macro4Label;
+    juce::Label macro1ValLabel, macro2ValLabel, macro3ValLabel, macro4ValLabel;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> macro1Attach, macro2Attach, macro3Attach, macro4Attach;
 
     // Osc A controls
     juce::ComboBox oscAWaveformBox;
-    juce::Slider oscALevelKnob, oscAUnisonKnob;
+    juce::Slider oscALevelKnob;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> oscALevelAttach;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> oscAWaveformAttach;
 
@@ -80,10 +85,18 @@ private:
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> glideAttach, masterVolAttach;
     std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> voiceModeAttach;
 
-    void setupKnob(juce::Slider& knob);
-    void setupLabel(juce::Label& label, const juce::String& text);
+    void setupKnob(juce::Slider& knob, juce::Colour accentColour = juce::Colour(0xfff0f0f0));
+    void setupSmallKnob(juce::Slider& knob, juce::Colour accentColour);
+    void setupLabel(juce::Label& label, const juce::String& text, float fontSize = 10.0f);
     void showPresetMenu();
     void updatePresetDisplay();
+    void updateCategoryColour();
+
+    // Paint helpers
+    void drawSection(juce::Graphics& g, juce::Rectangle<float> bounds, const juce::String& title,
+                     juce::Colour accent = juce::Colour(0xff556677));
+    void drawHeaderBar(juce::Graphics& g);
+    void drawMacroBackground(juce::Graphics& g);
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(VoidSynthAudioProcessorEditor)
 };
