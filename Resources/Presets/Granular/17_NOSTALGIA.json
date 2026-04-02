@@ -1,0 +1,64 @@
+{
+  "name": "NOSTALGIA",
+  "category": "Granular",
+  "tags": ["atmosphere", "warm", "nostalgia", "pad", "vocal"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "triangle",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.15,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 3,
+    "detuneAmount": 0.15,
+    "unisonSpread": 0.6,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 8,
+    "position": 0.4,
+    "positionRand": 0.1,
+    "size": 250.0,
+    "density": 6.0,
+    "pitch": 0,
+    "pitchRand": 2,
+    "shape": "hann",
+    "panSpread": 0.4,
+    "level": 0.65
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 1.2, "mix": 0.05 },
+  "filter": { "type": "lp12", "cutoff": 4500.0, "resonance": 0.2, "envAmount": 0.15, "keyTrack": 0.2, "drive": 1.0 },
+  "ampEnv": { "attack": 0.15, "decay": 0.8, "sustain": 0.75, "release": 1.2 },
+  "filterEnv": { "attack": 0.1, "decay": 0.5, "sustain": 0.5, "release": 0.6 },
+  "lfo1": { "rate": 0.3, "shape": "sine", "tempoSync": false, "amount": 0.1, "target": "granPosition" },
+  "lfo2": { "rate": 0.2, "shape": "triangle", "tempoSync": false, "amount": 0.0, "target": "granPitch" },
+  "fx": {
+    "chorus": { "rate": 0.5, "depth": 0.35, "mix": 0.2 },
+    "delay": { "time": 500.0, "feedback": 0.35, "mix": 0.2, "sync": false, "filter": 5000.0 },
+    "reverb": { "size": 0.75, "damping": 0.4, "mix": 0.5 }
+  },
+  "macros": [
+    { "name": "MEMORY", "mappings": [{ "target": "reverbMix", "amount": 0.4 }, { "target": "delayMix", "amount": 0.3 }] },
+    { "name": "WARMTH", "mappings": [{ "target": "filterCutoff", "amount": -0.3 }, { "target": "oscALevel", "amount": 0.3 }] },
+    { "name": "TEXTURE", "mappings": [{ "target": "granDensity", "amount": 0.5 }, { "target": "lfo1Amount", "amount": 0.4 }] },
+    { "name": "HAZE", "mappings": [{ "target": "chorusMix", "amount": 0.5 }, { "target": "oscADetune", "amount": 0.4 }] }
+  ]
+}

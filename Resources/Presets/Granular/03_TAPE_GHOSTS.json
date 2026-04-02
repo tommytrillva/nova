@@ -1,0 +1,64 @@
+{
+  "name": "TAPE GHOSTS",
+  "category": "Granular",
+  "tags": ["tape", "lofi", "ghost", "texture"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 10,
+    "position": 0.5,
+    "positionRand": 0.3,
+    "size": 40.0,
+    "density": 12.0,
+    "pitch": 0,
+    "pitchRand": 3,
+    "shape": "hann",
+    "panSpread": 0.4,
+    "level": 0.75
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "bitcrush", "drive": 3.0, "mix": 0.4 },
+  "filter": { "type": "lp12", "cutoff": 6000.0, "resonance": 0.2, "envAmount": 0.0, "keyTrack": 0.0, "drive": 1.0 },
+  "ampEnv": { "attack": 0.05, "decay": 0.6, "sustain": 0.5, "release": 0.8 },
+  "filterEnv": { "attack": 0.01, "decay": 0.3, "sustain": 0.4, "release": 0.5 },
+  "lfo1": { "rate": 0.8, "shape": "sine", "tempoSync": false, "amount": 0.2, "target": "granPosition" },
+  "lfo2": { "rate": 4.0, "shape": "random", "tempoSync": false, "amount": 0.1, "target": "granPitch" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 375.0, "feedback": 0.4, "mix": 0.0, "sync": true, "filter": 8000.0 },
+    "reverb": { "size": 0.7, "damping": 0.6, "mix": 0.45 }
+  },
+  "macros": [
+    { "name": "DEGRADE", "mappings": [{ "target": "distDrive", "amount": 0.6 }, { "target": "distMix", "amount": 0.5 }] },
+    { "name": "HAUNT", "mappings": [{ "target": "reverbMix", "amount": 0.5 }, { "target": "reverbSize", "amount": 0.3 }] },
+    { "name": "WARP", "mappings": [{ "target": "lfo2Amount", "amount": 0.7 }] },
+    { "name": "FILTER", "mappings": [{ "target": "filterCutoff", "amount": -0.5 }] }
+  ]
+}

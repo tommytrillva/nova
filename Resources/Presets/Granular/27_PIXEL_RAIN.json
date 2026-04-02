@@ -1,0 +1,64 @@
+{
+  "name": "PIXEL RAIN",
+  "category": "Granular",
+  "tags": ["noise", "digital", "tiny", "dense", "highpass"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 20,
+    "position": 0.5,
+    "positionRand": 0.8,
+    "size": 8.0,
+    "density": 50.0,
+    "pitch": 0,
+    "pitchRand": 5,
+    "shape": "rect",
+    "panSpread": 0.9,
+    "level": 0.75
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 1.0, "mix": 0.0 },
+  "filter": { "type": "hp12", "cutoff": 2000.0, "resonance": 0.3, "envAmount": 0.3, "keyTrack": 0.0, "drive": 1.0 },
+  "ampEnv": { "attack": 0.005, "decay": 0.2, "sustain": 0.5, "release": 0.3 },
+  "filterEnv": { "attack": 0.01, "decay": 0.3, "sustain": 0.4, "release": 0.2 },
+  "lfo1": { "rate": 8.0, "shape": "random", "tempoSync": false, "amount": 0.4, "target": "granPosition" },
+  "lfo2": { "rate": 5.0, "shape": "random", "tempoSync": false, "amount": 0.3, "target": "granPitch" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 187.0, "feedback": 0.3, "mix": 0.2, "sync": true, "filter": 10000.0 },
+    "reverb": { "size": 0.3, "damping": 0.5, "mix": 0.15 }
+  },
+  "macros": [
+    { "name": "DENSITY", "mappings": [{ "target": "granDensity", "amount": 0.5 }, { "target": "lfo1Amount", "amount": 0.3 }] },
+    { "name": "FILTER", "mappings": [{ "target": "filterCutoff", "amount": 0.6 }, { "target": "filterRes", "amount": 0.3 }] },
+    { "name": "SPACE", "mappings": [{ "target": "reverbMix", "amount": 0.5 }, { "target": "delayMix", "amount": 0.4 }] },
+    { "name": "GLITCH", "mappings": [{ "target": "lfo2Amount", "amount": 0.7 }, { "target": "granLevel", "amount": 0.25 }] }
+  ]
+}

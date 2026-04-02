@@ -1,0 +1,64 @@
+{
+  "name": "AURORA",
+  "category": "Pads",
+  "tags": ["evolving", "wavetable", "granular", "shimmering"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "wavetable",
+    "wavetableIndex": 5,
+    "wavetablePosition": 0.2,
+    "level": 0.75,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 4,
+    "detuneAmount": 0.18,
+    "unisonSpread": 0.7,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "wavetable",
+    "wavetableIndex": 5,
+    "wavetablePosition": 0.7,
+    "level": 0.4,
+    "coarseTune": 12,
+    "fineTune": 0.03,
+    "unison": 2,
+    "detuneAmount": 0.1,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 13,
+    "position": 0.5,
+    "positionRand": 0.5,
+    "size": 90.0,
+    "density": 12.0,
+    "pitch": 12,
+    "pitchRand": 5,
+    "shape": "hann",
+    "panSpread": 0.8,
+    "level": 0.25
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 1.0, "mix": 0.0 },
+  "filter": { "type": "lp12", "cutoff": 9000.0, "resonance": 0.08, "envAmount": 0.2, "keyTrack": 0.5, "drive": 1.0 },
+  "ampEnv": { "attack": 1.2, "decay": 2.0, "sustain": 0.8, "release": 3.5 },
+  "filterEnv": { "attack": 0.8, "decay": 1.5, "sustain": 0.5, "release": 2.0 },
+  "lfo1": { "rate": 0.08, "shape": "sine", "tempoSync": false, "amount": 0.4, "target": "wavetablePosition" },
+  "lfo2": { "rate": 0.12, "shape": "triangle", "tempoSync": false, "amount": 0.15, "target": "granPosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.35, "mix": 0.3 },
+    "delay": { "time": 500.0, "feedback": 0.35, "mix": 0.15, "sync": true, "filter": 8000.0 },
+    "reverb": { "size": 0.7, "damping": 0.35, "mix": 0.5 }
+  },
+  "macros": [
+    { "name": "EVOLUTION", "mappings": [{ "target": "lfo1Amount", "amount": 0.5 }, { "target": "lfo2Amount", "amount": 0.4 }] },
+    { "name": "SHIMMER", "mappings": [{ "target": "granLevel", "amount": 0.5 }, { "target": "granDensity", "amount": 0.3 }] },
+    { "name": "DEPTH", "mappings": [{ "target": "reverbMix", "amount": 0.4 }, { "target": "delayMix", "amount": 0.3 }] },
+    { "name": "BRIGHTNESS", "mappings": [{ "target": "filterCutoff", "amount": 0.5 }] }
+  ]
+}

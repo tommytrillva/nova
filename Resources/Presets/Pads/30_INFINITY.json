@@ -1,0 +1,64 @@
+{
+  "name": "INFINITY",
+  "category": "Pads",
+  "tags": ["cinematic", "massive", "layered", "signature"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.6,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 8,
+    "detuneAmount": 0.3,
+    "unisonSpread": 0.9,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "wavetable",
+    "wavetableIndex": 19,
+    "wavetablePosition": 0.5,
+    "level": 0.5,
+    "coarseTune": 0,
+    "fineTune": 0.06,
+    "unison": 4,
+    "detuneAmount": 0.2,
+    "unisonSpread": 0.75,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 12,
+    "position": 0.5,
+    "positionRand": 0.4,
+    "size": 110.0,
+    "density": 14.0,
+    "pitch": 0,
+    "pitchRand": 5,
+    "shape": "hann",
+    "panSpread": 0.8,
+    "level": 0.3
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.25 },
+  "distortion": { "mode": "softclip", "drive": 1.4, "mix": 0.12 },
+  "filter": { "type": "lp12", "cutoff": 6000.0, "resonance": 0.1, "envAmount": 0.25, "keyTrack": 0.4, "drive": 1.1 },
+  "ampEnv": { "attack": 2.0, "decay": 2.5, "sustain": 0.85, "release": 4.0 },
+  "filterEnv": { "attack": 1.2, "decay": 1.0, "sustain": 0.5, "release": 2.5 },
+  "lfo1": { "rate": 0.08, "shape": "sine", "tempoSync": false, "amount": 0.2, "target": "filterCutoff" },
+  "lfo2": { "rate": 0.06, "shape": "triangle", "tempoSync": false, "amount": 0.35, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.45, "mix": 0.4 },
+    "delay": { "time": 500.0, "feedback": 0.45, "mix": 0.25, "sync": true, "filter": 6000.0 },
+    "reverb": { "size": 0.9, "damping": 0.3, "mix": 0.65 }
+  },
+  "macros": [
+    { "name": "EVOLUTION", "mappings": [{ "target": "lfo1Amount", "amount": 0.4 }, { "target": "lfo2Amount", "amount": 0.5 }, { "target": "granPosition", "amount": 0.3 }] },
+    { "name": "DEPTH", "mappings": [{ "target": "reverbMix", "amount": 0.3 }, { "target": "delayMix", "amount": 0.3 }, { "target": "reverbSize", "amount": 0.2 }] },
+    { "name": "LAYERS", "mappings": [{ "target": "oscBLevel", "amount": 0.3 }, { "target": "granLevel", "amount": 0.3 }, { "target": "subLevel", "amount": 0.3 }] },
+    { "name": "WIDTH", "mappings": [{ "target": "oscADetune", "amount": 0.4 }, { "target": "oscBDetune", "amount": 0.3 }, { "target": "chorusMix", "amount": 0.3 }] }
+  ]
+}

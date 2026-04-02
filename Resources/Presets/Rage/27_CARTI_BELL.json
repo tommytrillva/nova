@@ -1,0 +1,64 @@
+{
+  "name": "CARTI BELL",
+  "category": "Rage",
+  "tags": ["bell", "lead", "bright", "delay", "carti"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "mono",
+  "glideTime": 0.01,
+  "oscA": {
+    "waveform": "sine",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.9,
+    "coarseTune": 12,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "triangle",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.4,
+    "coarseTune": 24,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.0,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 3.0, "mix": 0.2 },
+  "filter": { "type": "lp12", "cutoff": 14000.0, "resonance": 0.1, "envAmount": 0.2, "keyTrack": 0.8, "drive": 1.0 },
+  "ampEnv": { "attack": 0.001, "decay": 0.4, "sustain": 0.1, "release": 0.3 },
+  "filterEnv": { "attack": 0.001, "decay": 0.3, "sustain": 0.2, "release": 0.2 },
+  "lfo1": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "filterCutoff" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 375.0, "feedback": 0.5, "mix": 0.35, "sync": true, "filter": 10000.0 },
+    "reverb": { "size": 0.45, "damping": 0.3, "mix": 0.2 }
+  },
+  "macros": [
+    { "name": "SHIMMER", "mappings": [ { "target": "delayMix", "amount": 0.5 }, { "target": "delayFeedback", "amount": 0.4 }, { "target": "reverbMix", "amount": 0.4 } ] },
+    { "name": "RING", "mappings": [ { "target": "ampD", "amount": 0.6 }, { "target": "ampR", "amount": 0.5 }, { "target": "oscBLevel", "amount": 0.3 } ] },
+    { "name": "GRIT", "mappings": [ { "target": "distDrive", "amount": 0.5 }, { "target": "distMix", "amount": 0.4 }, { "target": "filterCutoff", "amount": -0.2 } ] },
+    { "name": "BRIGHT", "mappings": [ { "target": "filterCutoff", "amount": 0.4 }, { "target": "oscBLevel", "amount": 0.5 }, { "target": "filterEnvAmt", "amount": 0.3 } ] }
+  ]
+}

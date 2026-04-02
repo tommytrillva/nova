@@ -1,0 +1,64 @@
+{
+  "name": "GLASS SHARDS",
+  "category": "Granular",
+  "tags": ["percussion", "glass", "sharp", "random", "delay"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "sine",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.1,
+    "coarseTune": 12,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 17,
+    "position": 0.5,
+    "positionRand": 0.5,
+    "size": 25.0,
+    "density": 15.0,
+    "pitch": 5,
+    "pitchRand": 12,
+    "shape": "triangle",
+    "panSpread": 0.7,
+    "level": 0.75
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 1.0, "mix": 0.0 },
+  "filter": { "type": "lp12", "cutoff": 16000.0, "resonance": 0.2, "envAmount": 0.0, "keyTrack": 0.0, "drive": 1.0 },
+  "ampEnv": { "attack": 0.001, "decay": 0.4, "sustain": 0.3, "release": 0.6 },
+  "filterEnv": { "attack": 0.001, "decay": 0.2, "sustain": 0.3, "release": 0.3 },
+  "lfo1": { "rate": 5.0, "shape": "random", "tempoSync": false, "amount": 0.3, "target": "granPosition" },
+  "lfo2": { "rate": 3.0, "shape": "random", "tempoSync": false, "amount": 0.2, "target": "granPitch" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 250.0, "feedback": 0.45, "mix": 0.35, "sync": true, "filter": 12000.0 },
+    "reverb": { "size": 0.5, "damping": 0.4, "mix": 0.25 }
+  },
+  "macros": [
+    { "name": "SHATTER", "mappings": [{ "target": "lfo1Amount", "amount": 0.7 }, { "target": "lfo2Amount", "amount": 0.6 }] },
+    { "name": "ECHO", "mappings": [{ "target": "delayMix", "amount": 0.5 }, { "target": "delayFeedback", "amount": 0.3 }] },
+    { "name": "BRIGHT", "mappings": [{ "target": "oscALevel", "amount": 0.3 }, { "target": "filterCutoff", "amount": 0.2 }] },
+    { "name": "SCATTER", "mappings": [{ "target": "granDensity", "amount": 0.6 }] }
+  ]
+}

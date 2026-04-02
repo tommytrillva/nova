@@ -1,0 +1,64 @@
+{
+  "name": "DRILL STAB",
+  "category": "Rage",
+  "tags": ["drill", "stab", "filter", "short"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "mono",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "square",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.85,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 2,
+    "detuneAmount": 0.08,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.4
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.5,
+    "coarseTune": 0,
+    "fineTune": 0.03,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.0,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.2 },
+  "distortion": { "mode": "softclip", "drive": 3.0, "mix": 0.3 },
+  "filter": { "type": "lp24", "cutoff": 1500.0, "resonance": 0.7, "envAmount": 0.85, "keyTrack": 0.5, "drive": 1.8 },
+  "ampEnv": { "attack": 0.001, "decay": 0.2, "sustain": 0.0, "release": 0.05 },
+  "filterEnv": { "attack": 0.001, "decay": 0.18, "sustain": 0.0, "release": 0.05 },
+  "lfo1": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "filterCutoff" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 375.0, "feedback": 0.25, "mix": 0.1, "sync": true, "filter": 6000.0 },
+    "reverb": { "size": 0.35, "damping": 0.6, "mix": 0.12 }
+  },
+  "macros": [
+    { "name": "STAB", "mappings": [ { "target": "filterEnvAmt", "amount": 0.7 }, { "target": "filterRes", "amount": 0.4 }, { "target": "ampD", "amount": -0.3 } ] },
+    { "name": "GRIT", "mappings": [ { "target": "distDrive", "amount": 0.6 }, { "target": "distMix", "amount": 0.5 } ] },
+    { "name": "TONE", "mappings": [ { "target": "filterCutoff", "amount": 0.6 }, { "target": "oscBLevel", "amount": 0.4 }, { "target": "filterRes", "amount": -0.3 } ] },
+    { "name": "SPACE", "mappings": [ { "target": "reverbMix", "amount": 0.5 }, { "target": "delayMix", "amount": 0.4 }, { "target": "delayFeedback", "amount": 0.3 } ] }
+  ]
+}

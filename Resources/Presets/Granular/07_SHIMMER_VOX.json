@@ -1,0 +1,64 @@
+{
+  "name": "SHIMMER VOX",
+  "category": "Granular",
+  "tags": ["vocal", "shimmer", "bright", "chorus"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "poly",
+  "glideTime": 0.0,
+  "oscA": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.0,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": true,
+    "sourceIndex": 4,
+    "position": 0.5,
+    "positionRand": 0.1,
+    "size": 80.0,
+    "density": 25.0,
+    "pitch": 12,
+    "pitchRand": 2,
+    "shape": "hann",
+    "panSpread": 0.5,
+    "level": 0.75
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 1.0, "mix": 0.0 },
+  "filter": { "type": "lp12", "cutoff": 16000.0, "resonance": 0.1, "envAmount": 0.0, "keyTrack": 0.0, "drive": 1.0 },
+  "ampEnv": { "attack": 0.02, "decay": 0.5, "sustain": 0.7, "release": 0.8 },
+  "filterEnv": { "attack": 0.01, "decay": 0.3, "sustain": 0.5, "release": 0.4 },
+  "lfo1": { "rate": 0.5, "shape": "sine", "tempoSync": false, "amount": 0.1, "target": "granPosition" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "granPitch" },
+  "fx": {
+    "chorus": { "rate": 1.2, "depth": 0.5, "mix": 0.4 },
+    "delay": { "time": 375.0, "feedback": 0.3, "mix": 0.1, "sync": true, "filter": 8000.0 },
+    "reverb": { "size": 0.75, "damping": 0.35, "mix": 0.45 }
+  },
+  "macros": [
+    { "name": "SHIMMER", "mappings": [{ "target": "chorusMix", "amount": 0.5 }, { "target": "chorusDepth", "amount": 0.4 }] },
+    { "name": "SPACE", "mappings": [{ "target": "reverbMix", "amount": 0.5 }, { "target": "reverbSize", "amount": 0.25 }] },
+    { "name": "SPARKLE", "mappings": [{ "target": "granDensity", "amount": 0.5 }, { "target": "filterCutoff", "amount": 0.3 }] },
+    { "name": "DRIFT", "mappings": [{ "target": "lfo1Amount", "amount": 0.6 }] }
+  ]
+}

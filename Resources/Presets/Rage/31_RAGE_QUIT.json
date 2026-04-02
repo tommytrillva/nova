@@ -1,0 +1,64 @@
+{
+  "name": "RAGE QUIT",
+  "category": "Rage",
+  "tags": ["distortion", "maximum", "wavefold", "hardclip", "aggressive", "chaos"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "mono",
+  "glideTime": 0.02,
+  "oscA": {
+    "waveform": "saw",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.95,
+    "coarseTune": 0,
+    "fineTune": 0.0,
+    "unison": 4,
+    "detuneAmount": 0.2,
+    "unisonSpread": 0.7,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "square",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.8,
+    "coarseTune": 0,
+    "fineTune": 0.05,
+    "unison": 2,
+    "detuneAmount": 0.1,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.4
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.0,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.4 },
+  "distortion": { "mode": "wavefold", "drive": 25.0, "mix": 0.85 },
+  "filter": { "type": "lp12", "cutoff": 5000.0, "resonance": 0.4, "envAmount": 0.5, "keyTrack": 0.5, "drive": 2.5 },
+  "ampEnv": { "attack": 0.001, "decay": 0.25, "sustain": 0.85, "release": 0.1 },
+  "filterEnv": { "attack": 0.001, "decay": 0.2, "sustain": 0.5, "release": 0.1 },
+  "lfo1": { "rate": 4.0, "shape": "square", "tempoSync": false, "amount": 0.15, "target": "filterCutoff" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 250.0, "feedback": 0.2, "mix": 0.08, "sync": true, "filter": 6000.0 },
+    "reverb": { "size": 0.25, "damping": 0.5, "mix": 0.08 }
+  },
+  "macros": [
+    { "name": "DESTROY", "mappings": [ { "target": "distDrive", "amount": 0.8 }, { "target": "distMix", "amount": 0.5 }, { "target": "filterRes", "amount": 0.4 } ] },
+    { "name": "STACK", "mappings": [ { "target": "oscBLevel", "amount": 0.5 }, { "target": "oscADetune", "amount": 0.4 }, { "target": "oscBDetune", "amount": 0.3 } ] },
+    { "name": "PUNCH", "mappings": [ { "target": "filterEnvAmt", "amount": 0.6 }, { "target": "filterCutoff", "amount": 0.4 }, { "target": "ampD", "amount": -0.3 } ] },
+    { "name": "CHAOS", "mappings": [ { "target": "lfo1Amount", "amount": 0.7 }, { "target": "lfo1Rate", "amount": 0.5 }, { "target": "lfo2Amount", "amount": 0.4 } ] }
+  ]
+}

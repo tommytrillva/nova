@@ -1,0 +1,64 @@
+{
+  "name": "ICE PICK",
+  "category": "Rage",
+  "tags": ["triangle", "lead", "clean", "high", "cutting", "minimal"],
+  "author": "TommyTrillAI",
+  "version": 1,
+  "voiceMode": "mono",
+  "glideTime": 0.01,
+  "oscA": {
+    "waveform": "triangle",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.9,
+    "coarseTune": 12,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "oscB": {
+    "waveform": "sine",
+    "wavetableIndex": 0,
+    "wavetablePosition": 0.0,
+    "level": 0.2,
+    "coarseTune": 12,
+    "fineTune": 0.0,
+    "unison": 1,
+    "detuneAmount": 0.0,
+    "unisonSpread": 0.5,
+    "pulseWidth": 0.5
+  },
+  "granular": {
+    "enabled": false,
+    "sourceIndex": 0,
+    "position": 0.5,
+    "positionRand": 0.0,
+    "size": 80.0,
+    "density": 10.0,
+    "pitch": 0,
+    "pitchRand": 0,
+    "shape": "hann",
+    "panSpread": 0.0,
+    "level": 0.0
+  },
+  "sub": { "shape": "sine", "octave": -1, "level": 0.0 },
+  "distortion": { "mode": "softclip", "drive": 1.5, "mix": 0.1 },
+  "filter": { "type": "lp12", "cutoff": 18000.0, "resonance": 0.05, "envAmount": 0.1, "keyTrack": 0.8, "drive": 1.0 },
+  "ampEnv": { "attack": 0.001, "decay": 0.25, "sustain": 0.8, "release": 0.1 },
+  "filterEnv": { "attack": 0.001, "decay": 0.2, "sustain": 0.7, "release": 0.1 },
+  "lfo1": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "filterCutoff" },
+  "lfo2": { "rate": 2.0, "shape": "sine", "tempoSync": false, "amount": 0.0, "target": "wavetablePosition" },
+  "fx": {
+    "chorus": { "rate": 0.8, "depth": 0.3, "mix": 0.0 },
+    "delay": { "time": 375.0, "feedback": 0.25, "mix": 0.1, "sync": true, "filter": 12000.0 },
+    "reverb": { "size": 0.2, "damping": 0.3, "mix": 0.05 }
+  },
+  "macros": [
+    { "name": "EDGE", "mappings": [ { "target": "distDrive", "amount": 0.5 }, { "target": "distMix", "amount": 0.4 }, { "target": "filterRes", "amount": 0.3 } ] },
+    { "name": "LAYER", "mappings": [ { "target": "oscBLevel", "amount": 0.5 }, { "target": "oscADetune", "amount": 0.3 }, { "target": "chorusMix", "amount": 0.2 } ] },
+    { "name": "BODY", "mappings": [ { "target": "subLevel", "amount": 0.6 }, { "target": "filterCutoff", "amount": -0.3 }, { "target": "ampS", "amount": 0.2 } ] },
+    { "name": "SPACE", "mappings": [ { "target": "delayMix", "amount": 0.5 }, { "target": "reverbMix", "amount": 0.4 }, { "target": "delayFeedback", "amount": 0.3 } ] }
+  ]
+}
