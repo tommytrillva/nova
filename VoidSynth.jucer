@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="VoidSynth" name="VOIDSYNTH" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" version="1.0.0"
+              companyName="TommyTrillAI" companyWebsite="" companyEmail=""
+              displaySplashScreen="0" reportAppUsage="0" splashScreenColour="Dark"
+              pluginName="VOIDSYNTH" pluginDesc="Advanced Wavetable and Granular Synthesizer"
+              pluginManufacturer="TommyTrillAI" pluginManufacturerCode="Ttai"
+              pluginCode="Void" pluginChannelConfigs="{0, 2}" pluginIsSynth="1"
+              pluginWantsMidiIn="1" pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0"
+              pluginEditorRequiresKeys="0" pluginAUExportPrefix="VoidSynthAU"
+              aaxIdentifier="com.tommytrillai.voidsynth" pluginAAXCategory="2"
+              bundleIdentifier="com.tommytrillai.voidsynth" cppLanguageStandard="17"
+              companyCopyright="TommyTrillAI" buildVST="0" buildVST3="1" buildAU="1"
+              buildAUv3="0" buildAAX="0" buildStandalone="1" enableIAA="0">
+
+  <MAINGROUP id="VoidSynth" name="VOIDSYNTH">
+    <GROUP id="{Sources}" name="Source">
+      <FILE id="PluginProcessor.cpp" file="Source/PluginProcessor.cpp"/>
+      <FILE id="PluginProcessor.h" file="Source/PluginProcessor.h"/>
+      <FILE id="PluginEditor.cpp" file="Source/PluginEditor.cpp"/>
+      <FILE id="PluginEditor.h" file="Source/PluginEditor.h"/>
+      <FILE id="OscillatorEngine.cpp" file="Source/OscillatorEngine.cpp"/>
+      <FILE id="OscillatorEngine.h" file="Source/OscillatorEngine.h"/>
+      <FILE id="SynthVoice.cpp" file="Source/SynthVoice.cpp"/>
+      <FILE id="SynthVoice.h" file="Source/SynthVoice.h"/>
+      <FILE id="SynthSound.h" file="Source/SynthSound.h"/>
+      <FILE id="SubOscillator.cpp" file="Source/SubOscillator.cpp"/>
+      <FILE id="SubOscillator.h" file="Source/SubOscillator.h"/>
+      <FILE id="MultiFilter.cpp" file="Source/MultiFilter.cpp"/>
+      <FILE id="MultiFilter.h" file="Source/MultiFilter.h"/>
+      <FILE id="DistortionProcessor.cpp" file="Source/DistortionProcessor.cpp"/>
+      <FILE id="DistortionProcessor.h" file="Source/DistortionProcessor.h"/>
+      <FILE id="GranularEngine.cpp" file="Source/GranularEngine.cpp"/>
+      <FILE id="GranularEngine.h" file="Source/GranularEngine.h"/>
+      <FILE id="FXChain.cpp" file="Source/FXChain.cpp"/>
+      <FILE id="FXChain.h" file="Source/FXChain.h"/>
+      <FILE id="MacroSystem.cpp" file="Source/MacroSystem.cpp"/>
+      <FILE id="MacroSystem.h" file="Source/MacroSystem.h"/>
+      <FILE id="PresetManager.cpp" file="Source/PresetManager.cpp"/>
+      <FILE id="PresetManager.h" file="Source/PresetManager.h"/>
+      <FILE id="LookAndFeel.cpp" file="Source/LookAndFeel.cpp"/>
+      <FILE id="LookAndFeel.h" file="Source/LookAndFeel.h"/>
+    </GROUP>
+  </MAINGROUP>
+
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"
+               JUCE_USE_CURL="0" JUCE_WEB_BROWSER="0" JUCE_DISPLAY_SPLASH_SCREEN="0"/>
+
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+
+</JUCERPROJECT>
