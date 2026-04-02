@@ -10,7 +10,13 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
-# Static link MinGW runtimes so no DLL dependencies
-set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static -lpthread -Wl,-subsystem,windows" CACHE STRING "" FORCE)
-set(CMAKE_SHARED_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static -lpthread -Wl,-subsystem,windows" CACHE STRING "" FORCE)
-set(CMAKE_MODULE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static -lpthread -Wl,-subsystem,windows" CACHE STRING "" FORCE)
+# Static link all MinGW runtimes — no external DLL dependencies
+set(CMAKE_C_FLAGS "-static-libgcc" CACHE STRING "" FORCE)
+set(CMAKE_CXX_FLAGS "-static-libgcc -static-libstdc++" CACHE STRING "" FORCE)
+set(CMAKE_EXE_LINKER_FLAGS "-static -lpthread -Wl,-subsystem,windows" CACHE STRING "" FORCE)
+set(CMAKE_SHARED_LINKER_FLAGS "-static -lpthread -Wl,-subsystem,windows" CACHE STRING "" FORCE)
+set(CMAKE_MODULE_LINKER_FLAGS "-static -lpthread -Wl,-subsystem,windows" CACHE STRING "" FORCE)
+
+# Disable LTO — causes issues with MinGW cross-compilation
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION OFF)
+set(JUCE_ENABLE_MODULE_SOURCE_GROUPS OFF)
